@@ -13,9 +13,9 @@
     <input type="text" name="poids" id="poids"><br><br>
     <label for="taille">Donner votre prenom </label>
     <input type="text" name="taille"  id="taille">
-    <button onclick="calcul()">Ajouter</button>
+    <button onclick="ajoutPers()">Ajouter</button>
 
-    <h2 id="sortie"></h2>
+    <button onclick="supprimer()">Supprimer</button>
 
     <table>
       <thead>
@@ -38,7 +38,7 @@
     <script>
         
         let tab = [];
-        function calcul(){
+        function ajoutPers(){
             let poids = document.getElementById("poids").value;
             let taille = document.getElementById("taille").value;
             let sortie = document.getElementById("sortie");
@@ -60,6 +60,12 @@
             tr.appendChild(td2);
             document.getElementById("liste").appendChild(tr);
           }
+        }
+        function supprimer(){
+          
+          tab.splice(-1);
+          afficher();
+
         }
 
 
